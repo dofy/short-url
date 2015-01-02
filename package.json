@@ -1,0 +1,14 @@
+{
+    "name": "short-url",
+    "version": "0.1.0",
+    "description": "Shrot URL Service",
+    "private": true,
+    "dependencies": {
+        "mongoose": "3.8",
+        "express": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dofy/short-url.git"
+    }
+}
