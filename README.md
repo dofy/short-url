@@ -14,7 +14,8 @@
     * 数字 <=> 字符 算法参考 lib/smartNumber.js
     * 默认设置了数字+大小写字母共 62 个字符（若不想生成的 key 是连续规律的，采用字符乱序是个不错的选择）
     * 62 个字符当全部采用 5 位字符作为 key，可以保存 9亿+ 个记录
-
+* 调试运行 node app.js
+* 后台运行 npm start
 
 ### create your short url
 
@@ -25,11 +26,11 @@ http://your.domain/_?url=xxx
 **result**
 
 ```json
-{"key": "Key", "url": "Url"}
+{"url": "http://your.service.domain/{{key}}"}
 ```
 
 ### visit your short url
 
 ```
-http://your.domain/{{key}}
+http://your.service.domain/{{key}}
 ```
