@@ -1,14 +1,31 @@
 {
-    "name": "short-url",
-    "version": "0.1.0",
-    "description": "Shrot URL Service",
-    "private": true,
-    "dependencies": {
-        "mongoose": "3.8",
-        "express": "*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dofy/short-url.git"
-    }
+  "name": "short-url",
+  "version": "0.1.0",
+  "description": "Shrot URL Service",
+  "private": true,
+  "dependencies": {
+    "express": "^4.10.6",
+    "mongoose": "^3.8.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dofy/short-url.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dofy/short-url/issues"
+  },
+  "homepage": "https://github.com/dofy/short-url",
+  "main": "short-url.js",
+  "devDependencies": {},
+  "keywords": [
+    "short",
+    "url",
+    "api",
+    "service"
+  ],
+  "author": "Seven Yu",
+  "license": "ISC"
 }
