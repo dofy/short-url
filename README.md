@@ -3,7 +3,7 @@
 ### api
 http://your.domain/_?url=xxx
 
-* result *
+**result**
 
 ```json
 {"key": "Key", "url": "Url"}
