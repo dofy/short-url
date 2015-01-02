@@ -22,7 +22,13 @@ app.use('/_', require('./lib/routers/api'));
 app.use('/', require('./lib/routers/go'));
 
 app.use('*', function(req, res, next) {
-    res.send('Short URL Service');
+    var apiURL = req.protocol + '://' + req.headers.host + '/_';
+    res.send(
+        '|-.-| Short URL Service |-.-|' +
+        '<p>' +
+        '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href))">&gt;URL&lt;</a>' +
+        '</p>'
+        );
 });
 
 console.log('=====================================================');
