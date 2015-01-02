@@ -1,7 +1,9 @@
 ## Short URL Service
 
 ### api
+```
 http://your.domain/_?url=xxx
+```
 
 **result**
 
@@ -10,4 +12,6 @@ http://your.domain/_?url=xxx
 ```
 
 ### go
+```
 http://your.domain/{{key}}
+```
