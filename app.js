@@ -11,7 +11,7 @@ db.connect(config.db, function(err) {
         process.exit(0);
     } else {
         smart.chars(config.chars);
-        url.init();
+        url.init(smart.str2num('dan'));
         console.info('-- service init');
     }
 });
