@@ -26,7 +26,7 @@ app.use('*', function(req, res, next) {
     res.send(
         '|-.-| Short URL Service |-.-|' +
         '<p>' +
-        '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href));">&gt;URL&lt;</a>' +
+        '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href));">&gt;.&lt;</a>' +
         '</p>'
         );
 });
