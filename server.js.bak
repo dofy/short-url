@@ -1,7 +1,7 @@
 var spawn = require('child_process').spawn;
 
 function createChild() {
-    var server = spawn('node', ['short-url.js'], {
+    var server = spawn('node', ['short.js'], {
         detached: true,
         stdio: ['ignore', 'ignore', 'ignore']
     });
