@@ -38,5 +38,7 @@ console.log('==        >>>  CTRL+C to Quit Service.  <<<        ==');
 console.log('==    Started at ' + new Date().toUTCString() + '     ==');
 console.log('=====================================================');
 
-app.listen(7777);
+for(var i=0, l=config.ports.length; i<l; i++) {
+    app.listen(config.ports[i]);
+}
 
