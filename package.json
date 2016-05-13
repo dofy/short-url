@@ -12,7 +12,8 @@
     "url": "https://github.com/dofy/short-url.git"
   },
   "scripts": {
-    "start": "node short.js"
+    "start": "node short.js",
+    "test": "node test.js"
   },
   "bugs": {
     "url": "https://github.com/dofy/short-url/issues"
