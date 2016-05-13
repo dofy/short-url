@@ -24,11 +24,11 @@ app.use('/', require('./lib/routers/go'));
 app.use('*', function(req, res, next) {
     var apiURL = req.protocol + '://' + req.headers.host + '/_';
     res.send(
-        '|-.-| Short URL Service |-.-|' +
-        '<p>' +
-        '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href));">&gt;.&lt;</a>' +
-        '</p>'
-        );
+            '|-.-| Short URL Service |-.-|' +
+            '<p>' +
+            '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href));">&gt;.&lt;</a>' +
+            '</p>'
+            );
 });
 
 console.log('=====================================================');
@@ -38,7 +38,4 @@ console.log('==        >>>  CTRL+C to Quit Service.  <<<        ==');
 console.log('==    Started at ' + new Date().toUTCString() + '     ==');
 console.log('=====================================================');
 
-for(var i=0, l=config.ports.length; i<l; i++) {
-    app.listen(config.ports[i]);
-}
-
+app.listen(config.port);
