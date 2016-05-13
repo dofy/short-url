@@ -4,8 +4,8 @@ var sn = require('./lib/smartNumber'),
 
 sn.chars(conf.chars);
 
-start = sn.s2n('dze');
-count = start + 10;
+start = sn.s2n('dzs');
+count = start + 17;
 
 console.log('.START.');
 
