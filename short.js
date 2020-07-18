@@ -1,41 +1,42 @@
-var express = require('express'),
-    app     = express(),
-    config  = require('./lib/config'),
-    db      = require('./lib/db'),
-    url     = require('./lib/models/url'),
-    smart   = require('./lib/smartNumber');
+const express = require('express')
+const path = require('path')
+const fs = require('fs')
+const db = require('./lib/db')
+const config = require('./lib/config')
+const smart = require('./lib/smartNumber')
 
-db.connect(config.db, function(err) {
-    if(err) {
-        console.error(err);
-        process.exit(0);
-    } else {
-        smart.chars(config.chars);
-        url.init(smart.str2num('dan'));
-        console.info('-- service init');
-    }
-});
+const app = express()
 
-app.use(express.static(__dirname + '/public'));
+db.connect(config.db, () => {
+  smart.chars(config.chars)
+  console.info('-- service init')
+})
 
-app.use('/_', require('./lib/routers/api'));
-app.use('/', require('./lib/routers/go'));
+app.use(express.static(path.join(__dirname, '/public')))
 
-app.use('*', function(req, res, next) {
-    var apiURL = req.protocol + '://' + req.headers.host + '/_';
-    res.send(
-            '|-.-| Short URL Service |-.-|' +
-            '<p>' +
-            '<a href="javascript:void(location.href=\'' + apiURL + '?url=\'+encodeURIComponent(location.href));">&gt;.&lt;</a>' +
-            '</p>'
-            );
-});
+app.use('/_', require('./lib/routers/api'))
+app.use('/', require('./lib/routers/go'))
 
-console.log('=====================================================');
-console.log('==     |-.-|      SHORT URL SERVICE      |-.-|     ==');
-console.log('=====================================================');
-console.log('==        >>>  CTRL+C to Quit Service.  <<<        ==');
-console.log('==    Started at ' + new Date().toUTCString() + '     ==');
-console.log('=====================================================');
+app.use('*', (req, res) => {
+  let apiURL = req.protocol + '://' + req.headers.host + '/_'
+  fs.readFile(
+    path.join(__dirname, 'pages/index.html'),
+    { encoding: 'utf8' },
+    (err, result) => {
+      if (err) {
+        res.status(404).send('Oooooops...').end()
+      } else {
+        res.status(200).send(result.replace('{apiURL}', apiURL)).end()
+      }
+    },
+  )
+})
 
-app.listen(config.port);
+console.log('=====================================================')
+console.log('==     |-.-|      SHORT URL SERVICE      |-.-|     ==')
+console.log('=====================================================')
+console.log('==        >>>  CTRL+C to Quit Service.  <<<        ==')
+console.log('==    Started at ' + new Date().toUTCString() + '     ==')
+console.log('=====================================================')
+
+app.listen(config.port)

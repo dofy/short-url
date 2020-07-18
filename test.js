@@ -1,22 +1,22 @@
-var sn = require('./lib/smartNumber'),
-    conf = require('./lib/config'),
-    start, count, dict = {};
+const sn = require('./lib/smartNumber')
+const conf = require('./lib/config')
 
-sn.chars(conf.chars);
+sn.chars(conf.chars)
 
-start = sn.s2n('dzs');
-count = start + 17;
+let start = sn.s2n('dzs')
+let count = start + 17
+let dict = {}
 
-console.log('.START.');
+console.log('.START.')
 
-for(var key, i = start; i < count; i++) {
-    key = sn.n2s(i);
-    console.log(key, i);
-    if(dict.hasOwnProperty(key)) {
-        console.log(key, dict[key], i);
-    } else {
-        dict[key] = i;
-    }
+for (let key, i = start; i < count; i++) {
+  key = sn.n2s(i)
+  console.log(key, i)
+  if (dict.hasOwnProperty(key)) {
+    console.log(key, dict[key], i)
+  } else {
+    dict[key] = i
+  }
 }
 
-console.log('.DONE.');
+console.log('.DONE.')
