@@ -1,12 +1,13 @@
 body {
-  background: #20262E;
+  background: #30363f;
   padding: 20px 70px;
   font-size: 17px;
   font-family: monospace;
 }
 
-a:visited, a:link {
-  color: #039;
+a:visited,
+a:link {
+  color: #369;
   text-decoration: none;
 }
 a:hover {
@@ -15,7 +16,7 @@ a:hover {
 }
 
 #app {
-  background: #fff;
+  background: #eee;
   border-radius: 4px;
   padding: 20px;
   transition: all 0.2s;
@@ -29,5 +30,11 @@ a:hover {
 
 .tip {
   color: #666;
+  font-size: 14px;
+  padding: 16px;
+}
+
+.copyright {
+  color: #999;
   font-size: 14px;
 }
